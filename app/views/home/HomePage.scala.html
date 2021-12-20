@@ -1,22 +1,161 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+    <head>
+        <meta charset="utf-8" />
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width" />
 
-    @views.html.title("Home")
+        @views.html.title("Dự Án")
 
-    @views.html.tags.main_css()
-  </head>
-  <body>
-    <div class="wrapper ">
-      home page
+        @views.html.tags.main_css()
+        <style>
+    .input-icons i {
+        position: static;
+        width: 65px;
+        height: 18px;
+        left: 32px;
+        top: 0px;
 
-    </div>
-  </body>
+        font-family: FS PF BeauSans Pro;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 18px;
+    }
+     .input-icons {
 
-  @views.html.tags.main_js()
+     }
+        </style>
+    </head>
+    <body>
+        <div class="wapper">
+            <div class="row">
+                <div class="wrapper">
+                    <div class="sidebar-wrapper" data-simplebar="true">
+                        <div class="sidebar-header">
+                            <div>
+                                <img src="@routes.Assets.versioned("images/logo_platform.png")" class="logo-icon" alt="logo icon" style="width: 252px; height: 84px;">
+                            </div>
+                            <div class="toggle-icon ms-auto" id="arrowMenu" style="display: none"><i class='bx bx-arrow-to-left'>
+                            </div>
+                            <div class="wrapper">
+                                <div class="sidebar-wrapper" data-simplebar="true">
+                                    <div class="sidebar-header">
+                                        <div>
+                                    </div>
+                                        <!--navigation-->
+                                    <ul class="metismenu" id="menu">
 
-</html>
+                                        <li id="menu-overview">
+                                            <a href="/overview/2b43606f-04f5-469b-a7f0-28f3f58c6059">
+                                                <div class="parent-icon">
+                                                    <img src="@routes.Assets.versioned("images/overview.png")" class="logo-icon" alt="logo icon" style="">
+                                                </div>
+                                                <div class="menu-title">Tổng quan</div>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a class="has-arrow" aria-expanded="false">
+                                                <div class="parent-icon">
+                                                    <img src="@routes.Assets.versioned("images/overview.png")" class="logo-icon" alt="logo icon" style="">
+                                                </div>
+                                                <div class="menu-title">Thiết bị</div>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a class="has-arrow" aria-expanded="false">
+                                                <div class="parent-icon">
+                                                    <img src="@routes.Assets.versioned("images/overview.png")" class="logo-icon" alt="logo icon" style="">
+                                                </div>
+                                                <div class="menu-title">Đám mây</div>
+                                            </a>
+                                        </li>
+
+                                        <li class="">
+                                            <a class="has-arrow" aria-expanded="false">
+                                                <div class="parent-icon">
+                                                    <img src="@routes.Assets.versioned("images/overview.png")" class="logo-icon" alt="logo icon" style="">
+                                                </div>
+                                                <div class="menu-title">Ứng dụng</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="has-arrow" aria-expanded="false">
+                                                <div class="parent-icon">
+                                                    <img src="@routes.Assets.versioned("images/overview.png")" class="logo-icon" alt="logo icon" style="">
+                                                </div>
+                                                <div class="menu-title">Thiết Bị</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="has-arrow" aria-expanded="false">
+                                                <div class="parent-icon">
+                                                    <img src="@routes.Assets.versioned("images/overview.png")" class="logo-icon" alt="logo icon" style="">
+                                                </div>
+                                                <div class="menu-title">Ứng dụng</div>
+                                        </li>
+                                        <li>
+                                            <a class="has-arrow" aria-hidden="false">
+                                                <div class="parent-icon">
+                                                    <img src="@routes.Assets.versioned("images/overview.png")" class="logo-icon" alt="logo icon" style="">
+                                                </div>
+                                                <div class="menu-title">Tích Hợp</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="has-arrow" aria-hidden="false">
+                                                <div class="parent-icon">
+                                                    <img src="@routes.Assets.versioned("images/overview.png")" class="logo-icon" alt="logo icon" style="" >
+                                                </div>
+                                                <div class="menu-title">Thanh toán </div>
+                                            </a>
+                                        </li>
+                                        <header>
+                                        <div class="topbar d-flex align-items-center">
+                                            <nav class="navbar navbar-expand">
+                                                <div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+                                                </div>
+
+                                                <div class="top-menu ms-auto">
+                                                    <ul class="navbar-nav align-items-center">
+                                                        <li class="nav-item dropdown dropdown-large">
+                                                            <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="https://hoangpm11.gitbook.io/innoway" target="_blank" style="font-size: 18px">
+                                                                <i class='bx bx-notepad'></i> Chào Hằng
+                                                            </a>
+                                                        </li>
+
+                                                        <li class="nav-item dropdown dropdown-large">
+                                                            <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px">
+                                                                <i class='bx bx-atom'></i>Quản Lý dự án  <i class='bx bx-caret-down'></i>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <a href="javascript:;">
+                                                                    <div class="msg-header">
+                                                                        <p class="msg-header-title">Cài đặt
+                                                                    </div>
+                                                                </a>
+                                                            <div class="header-message-list" id="headerListProject"></div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </nav>
+                                        </div>
+                                        <div class="">
+                                            <p>Bạn chưa có ứng dụng nào, hãy bắt đầu hãy bắt đầu bằng ứng dụng có sẵn,hoặc tạo mới của riêng bạn</p>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @views.html.tags.main_js()
+    </body>
+
+
+
+
+
