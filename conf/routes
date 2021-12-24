@@ -17,6 +17,8 @@ GET     /javascriptRoutes           controllers.JsController.javascriptRoutes()
 
 GET     /home                       controllers.HomeController.homePage()
 GET     /testCase                   controllers.HomeController.testCase()
+GET     /table                      controllers.HomeController.table()
+
 
 GET     /userList                   controllers.UserController.userList()
 POST    /userList                   controllers.UserController.userFilterList()
