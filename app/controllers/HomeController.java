@@ -11,6 +11,7 @@ public class HomeController extends AbstractController {
     public Result testCase() {
         return ok(views.html.home.testcare.apply());
     }
-    public Result table() { return ok(views.html.home.table.apply());}
+    public Result table() { return ok(views.html.home.table.apply()); }
+    public Result table2() { return ok(views.html.home.table2.apply()); }
     }
 

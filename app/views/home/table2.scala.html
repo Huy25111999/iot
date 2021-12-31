@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        @views.html.title("Dự Án")
+        @views.html.tags.main_css()
+        <style >
+
+        *,table{
+            margin: 0 auto;
+            padding: 0 auto;
+            box-sizing: border-box;
+            border-collapse: collapse;
+        }
+        .form_table tr, td,th{
+            padding: 12px;
+            border: 1px solid #0c83e2;
+            border-collapse: collapse;
+        }
+
+        /modal/
+
+        #modal form input{
+            display: block;
+        }
+        /*#modal .form-content*/
+        #modal{
+            margin-top: 50px;
+            width: 600px;
+            background: #FFFFFF;
+            color: #000;
+        }
+        .form-content {
+            margin: 90px;
+        }
+
+        #modal .modal_close {
+            height: 48px;
+            color: #0F1D2F;
+            font-size: 35px;
+            text-align: right;
+            padding: 20px;
+            margin-right: -70px;
+        }
+
+        form.submit {
+            text-align: center;
+            margin-top: 18px;
+        }
+        .form-content .form_head{
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+        }
+
+        .form-content .form-text{
+            display: flex;
+            padding: 15px;
+        }
+        .form-content .form-text label{
+            width: 110px;
+        }
+        .form-content .input .form_bottom{
+            text-align: center;
+            padding-bottom: 30px ;
+        }
+
+    </style>
+    </head>
+    <body>
+        <div class = "table">
+            <table class = "form_table" id ="form_table1">
+                <tr>
+                    <th>Stt</th>
+                    <th>Thuộc Tính</th>
+                    <th>ID</th>
+                    <th>Loại thuộc tính</th>
+                    <th>Loại giá trị</th>
+                    <th>Giá trị mặc định</th>
+                    <th>Giá trị hiện tại </th>
+                    <th>Cập nhập lần cuối </th>
+                    <th>Chức Năng</th>
+
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Thuộc Tính</td>
+                    <td>ID</td>
+                    <td>Loại thuộc tính</td>
+                    <td>Loại giá trị</td>
+                    <td>Giá trị mặc định</td>
+                    <td>Giá trị hiện tại</td>
+                    <td>Cập nhập lần cuối</td>
+                    <td>
+                        <input class="submit" type="button" value = "Delete" onclick="deleteRow(this);">
+                        <input class="submit" type="button" value = "Sửa" onclick="document.getElementById('modal').style.display='block';">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Thuộc Tính</td>
+                    <td>ID</td>
+                    <td>Loại thuộc tính</td>
+                    <td>Loại giá trị</td>
+                    <td>Giá trị mặc định</td>
+                    <td>Giá trị hiển tại</td>
+                    <td>Cập nhập lần cuối</td>
+                    <td>
+                        <input class="submit" type="button" value = "Delete" onclick="deleteRow(this) ;">
+                        <input class="submit" type="button" value = "Sửa" onclick="document.getElementById('modal').style.display='block';">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Thuộc tính</td>
+                    <td>ID</td>
+                    <td>Loại thuộc tính</td>
+                    <td>Loại giá trị</td>
+                    <td>Giá trị mặc định</td>
+                    <td>Giá trị hiện tại</td>
+                    <td>Cập nhập lần cuối</td>
+                    <td>
+                        <input class="submit" type="button" value = "Delete" onclick="deleteRow(this) ;">
+                        <input class="submit" type="button" value = "Sửa" onclick="document.getElementById('modal').style.display='block';">
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Thuộc tính</td>
+                    <td>ID</td>
+                    <td>Loại thuộc tính</td>
+                    <td>Loại giá trị</td>
+                    <td>Giá trị mặc định</td>
+                    <td>Giá trị hiện tại</td>
+                    <td>Cập nhập lần cuối</td>
+                    <td>
+                        <input class="submit" type="button" value = "Delete" onclick="deleteRow(this) ;">
+                        <input class="submit" type="button" value = "Sửa" onclick="document.getElementById('modal').style.display='block';">
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Thuộc tính</td>
+                    <td>ID</td>
+                    <td>Loại thuộc tính</td>
+                    <td>Loại giá trị</td>
+                    <td>Giá trị mặc định</td>
+                    <td>Giá trị hiện tại</td>
+                    <td>Cập nhập lần cuối</td>
+                    <td>
+                        <input class="submit" type="button" value="Delete" onclick="deleteRow(this) ;">
+                        <input class="submit" type="button" value="Sửa" onclick="document.getElementById('modal').style.display='block';">
+                    </td>
+                </tr>
+            </table>
+            <form action="" class = "submit">
+                <input class="submit" type="button" value = "Thêm" onclick="document.getElementById('modal').style.display='block'">
+            </form>
+        </div>
+
+        <div id="modal" style="display: none">
+
+            <div class="form-content">
+                <div class="modal_close" onclick="document.getElementById('modal').style.display='none';">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </div>
+                <div class="form_head">
+                    <h3>Form </h3>
+                </div>
+                <form class = "input">
+                    <div class = "form-text">
+                        <label for="">STT</label>
+                        <input  class = "" type="text" name="stt" id="stt">
+                    </div>
+
+                    <div class = "form-text">
+                        <label for="">Thuộc tính</label>
+                        <input type="text" name="Thuoctinh" id="Thuoctinh">
+                    </div>
+
+                    <div class = "form-text">
+                        <label for="">ID</label>
+                        <input type="text" name="ID" id="ID">
+                    </div>
+
+                    <div class = "form-text">
+                        <label for="">Loại thuộc tính</label>
+                        <input type="text" name="Loạithuoctinh" id="Loaithuoctinh">
+                    </div>
+
+                    <div class = "form-text">
+                        <label for="">Loại giá trị</label>
+                        <input type="text" name="Loaigiatri" id="LoaigiaTri">
+                    </div>
+
+                    <div class = "form-text">
+                        <label for="">Giá trị mặc định</label>
+                        <input type="text" name="Giatrimacdinh" id="Giatrịmacdinh">
+                    </div>
+
+                    <div class = "form-text">
+                        <label for="">Giá trị hiện tại</label>
+                        <input type="text" name="Giatrihientai" id="Giatrihientai">
+                    </div>
+                    <div class = "form-text">
+                        <label for="">Cập nhập lần cuối</label>
+                        <input type="text" name="Capnhaplancuoi" ip="Capnhaplancuoi"?
+                    </div>
+
+                    <div class="form_bottom">
+                        <input type="button" value="Add" onclick="them();">
+                        <input type="button" value="Save" onclick="editRow();">
+                        <input type="button" value="Reset" onclick="resetRow();">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <script>
+    var table = document.getElementById("form_table1"),rIndex ;
+    var row = table.rows.length,count;
+    for(var i = 0; i < row; i++){
+        table.rows[i].onclick = function(){
+            rIndex = this.rowIndex;
+
+            document.getElementById("Stt").value = this.cells[0].innerHTML;
+            document.getElementById("Thuoctinh").value = this.cells[1].innerHTML;
+            document.getElementById("ID").value = this.cells[2].innerHTML;
+            document.getElementById("Loaithuoctinh").value = this.cells[3].innerHTML;
+            document.getElementById("Loaigiatri").value = this.cells[4].innerHTML;
+            document.getElementById("Giatrimacdinh").value = this.cells[5].innerHTML;
+            document.getElementById("Giatrihientai").value = this.cells[6].innerHTML;
+            document.getElementById("Capnhaplancuoi").value= this.cells[7].innerHTML;
+        };
+    }
+
+    function check(){
+        let Stt = document.getElementById('Stt').value;
+        let Thuoctinh = document.getElementById('Thuoctinh').value;
+        let ID = document.getElementById('ID').value;
+        let Loaithuoctinh = document.getElementById('Loaithuoctinh').value;
+        let Loaigiatri = document.getElementById('Loaigiatri').value;
+        let Giatrimacdinh = document.getElementById('Giatrimacdinh').value;
+        let Giatrihientai = document.getElementById('Giatrihientai').value;
+        let Capnhaphientai = document.getElementById('Capnhaplancuoi').value;
+        if (Stt=="")
+        {
+            alert("STT ko được để trống");
+            return false ;
+        }
+        if (Thuoctinh="")
+        {
+            alert("Thuoctinh ko được để trống")
+            return false ;
+        }
+        if (ID="")
+        {
+            alert("ID ko được để trống")
+            return false ;
+        }
+        if (Loaithuoctinh="")
+        {
+            alert("Loaithuoctinh ko được để trống")
+            return false;
+        }
+        if (Loaigiatri="")
+        {
+            alert("Loaigiatri ko được để trống")
+            return false;
+        }
+        if (Giatrimacdinh="")
+        {
+            alert("Giatrimacdinh ko được để trống")
+            return false;
+        }
+        if (Giatrihientai="")
+        {
+            alert("Giatrihientai ko được để trống")
+            return false;
+        }
+        if (Capnhaplancuoi="")
+        {
+            alert("Capnhaplancuoi ko được để trống")
+            return false;
+        }
+        return true ;
+    }
+
+    function them(){
+        let Stt = document.getElementById('stt').value;
+        let Thuoctinh = document.getElementById('Thuoctinh').value;
+        let ID = document.getElementById('ID').value;
+        let Loaithuoctinh = document.getElementById('Loaithuoctinh').value;
+        let Loaigiatri = document.getElementById('Loaigiatri').value;
+        let Giatrimacdinh = document.getElementById('Giatrimacdinh').value;
+        let Giatrihientai = document.getElementById('Giatrihientai').value;
+        let Capnhaplancuoi = document.getElementById('Capnhaplancuoi').value;
+        if (check() )
+        {
+            var tabLines = document.getElementById("form_table1");
+            var tabLinesRow = tabLines.insertRow(tabLines.rows.length);
+            var col1html = Stt;
+            var col2html = Thuoctinh;
+            var col3html = ID;
+            var col4html = Loaithuoctinh;
+            var col5html = Loaigiatri;
+            var col6html = Giatrimacdinh;
+            var col7html = Giatrihientai;
+            var col8html = Capnhaplancuoi;
+            var col9html = "                <input class=\"submit\" type=\"button\" value = \"Delete\" onclick=\"deleteRow(this) ;\">\n" +
+                    "                <input class=\"submit\" type=\"button\" value = \"Sửa\" onclick=\"document.getElementById('modal').style.display='block';\">" ;
+
+            var col1 = tabLinesRow.insertCell(0); col1.innerHTML=col1html;
+            var col2 = tabLinesRow.insertCell(1); col2.innerHTML=col2html;
+            var col3 = tabLinesRow.insertCell(2); col3.innerHTML=col3html;
+            var col4 = tabLinesRow.insertCell(3); col4.innerHTML=col4html;
+            var col5 = tabLinesRow.insertCell(4); col5.innerHTML=col5html;
+            var col6 = tabLinesRow.insertCell(5); col6.innerHTML=col6html;
+            var col7 = tabLinesRow.insertCell(6); col7.innerHTML=col7html;
+            var col8 = tabLinesRow.insertCell(7); col8.innerHTML=col8html;
+            var col9 = tabLinesRow.insertCell(8); col9.innerHTML=col9html;
+        }
+    }
+    function resetRow(){
+        document.getElementById('Stt').value = "";
+        document.getElementById('Thuoctinh').value = "";
+        document.getElementById('Id').value = "";
+        document.getElementById('Loaithuoctinh').value = "";
+        document.getElementById('Loaigiatri').value = "";
+        document.getElementById('Giatrimacdinh').value = "";
+        document.getElementById('Giatrihientai').value = "";
+        document.getElementById('Capnhaplancuoi').value = "";
+    }
+
+    // Sửa
+    function editRow(){
+        table.rows[rIndex].cells[0].innerHTML = document.getElementById("Stt").value;
+        table.rows[rIndex].cells[1].innerHTML = document.getElementById("Thuoctinh").value;
+        table.rows[rIndex].cells[2].innerHTML = document.getElementById("ID").value;
+        table.rows[rIndex].cells[3].innerHTML = document.getElementById("Loaithuoctinh").value;
+        table.rows[rIndex].cells[4].innerHTML = document.getElementById("Loaigiatri").value;
+        table.rows[rIndex].cells[5].innerHTML = document.getElementById("Giatrimacdinh").value;
+        table.rows[rIndex].cells[6].innerHTML = document.getElementById("Giatrihientai").value;
+        table.rows[rIndex].cells[7].innerHTML = document.getElementById("Capnhaplancuoi").value;
+    }
+
+    //   Xóa
+    function deleteRow(row){
+        var i=row.parentNode.parentNode.rowIndex;
+        document.getElementById('form_table1').deleteRow(i);
+    }
+</script>
+        @views.html.tags.main_js()
+    </body>
+</html>
