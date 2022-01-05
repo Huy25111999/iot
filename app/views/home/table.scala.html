@@ -118,7 +118,7 @@
                                 <input class="submit" type="button" value = "Sửa" data-toggle="modal" data-target="#exampleModal">
                             </td>
                         </tr>
-                        <tr style="border-bottom: 1px solid black;">
+                        <tr style="border-bottom: 1px solid black;" id="tr_3">
                             <td>3</td>
                             <td>Thuộc Tính</td>
                             <td>ID</td>
@@ -129,7 +129,7 @@
                             <td>Cập nhập lần cuối :</td>
                             <td>
                                 <input class="submit" type="button" value = "Xóa" onclick="XoaRow(this) ;">
-                                <input class="submit" type="button" value = "Sửa" data-toggle="modal" data-target="#exampleModal">
+                                <input class="submit" type="button" value = "Sửa" data-toggle="modal" data-target="#editModal" onclick="setEditTr(3, 'Thuộc Tính', 'ID', 'Loại thuộc tính')">
                             </td>
                         </tr>
                         <tr style="border-bottom: 1px solid black;">
@@ -225,6 +225,7 @@
         </div>
             <!-- Modal -->
         @views.html.home.table_add()
+        @views.html.home.table_edit()
     </body>
     @views.html.tags.main_js()
 

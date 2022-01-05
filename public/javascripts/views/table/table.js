@@ -162,3 +162,28 @@ function addTable() {
 
     $("#table1").find("tbody").append(rowAppend);
 }
+
+function setEditTr(index, tt, id, ltt) {
+    console.log(index, tt, id, ltt);
+    $("#sttEdit").val(index);
+}
+
+function editTable() {
+    var index = $('#sttAdd').val();
+    console.log(index);
+    var rowAppend =
+        '<td>' + index + '</td>' +
+        '<td>'+$("#thuocTinh").val()+'</td>' +
+        '<td>ID1</td>' +
+        '<td>Loại thuộc tính1</td>' +
+        '<td>Loại giá trị1</td>' +
+        '<td>Giá trị mặc định1</td>' +
+        '<td>Giá trị hiện tại1</td>' +
+        '<td>Cập nhập lần cuối1 :</td>' +
+        '<td>' +
+        '<input class="submit" type="button" value = "Xóa" onclick="XoaRow(this) ;">' +
+        '<input class="submit" type="button" value = "Sửa" data-toggle="modal" data-target="#exampleModal">' +
+        '</td>';
+
+    $("#tr_3").html(rowAppend);
+}
