@@ -138,7 +138,27 @@ function editRow(){
 //  Xóa
 function XoaRow(row) {
         var i=row.parentNode.parentNode.rowIndex;
-        document.getElementById('tablel').deleteRow(i);
+        document.getElementById('table1').deleteRow(i);
 
-    table.rows[rIndex]
+}
+
+function addTable() {
+    var index = $('#sttAdd').val();
+    console.log(index);
+    var rowAppend = '<tr style="border-bottom: 1px solid black;">' +
+        '<td>' + index + '</td>' +
+        '<td>'+$("#thuocTinh").val()+'</td>' +
+        '<td>ID1</td>' +
+        '<td>Loại thuộc tính1</td>' +
+        '<td>Loại giá trị1</td>' +
+        '<td>Giá trị mặc định1</td>' +
+        '<td>Giá trị hiện tại1</td>' +
+        '<td>Cập nhập lần cuối1 :</td>' +
+        '<td>' +
+        '<input class="submit" type="button" value = "Xóa" onclick="XoaRow(this) ;">' +
+        '<input class="submit" type="button" value = "Sửa" data-toggle="modal" data-target="#exampleModal">' +
+        '</td>' +
+        '</tr>';
+
+    $("#table1").find("tbody").append(rowAppend);
 }
