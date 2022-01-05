@@ -79,25 +79,27 @@ function check(){
     return true;
 }
 function them(){
-    let Stt = document.getElementById('stt').value;
-    let Id = document.getElementById('id').value;
-    let HoTen = document.getElementById('hoTen').value;
-    let NgaySinh = document.getElementById('ngaySinh').value;
-    let QueQuan = document.getElementById('queQuan').value;
-    let SoCMND = document.getElementById('soCMND').value;
-    let Phone = document.getElementById('phone').value;
+    let Stt = document.getElementById('Stt').value;
+    let Thuoctinh = document.getElementById('Thuoctinh').value;
+    let ID = document.getElementById('ID').value;
+    let Loaithuoctinh = document.getElementById('Loaithuoctinh').value;
+    let Loaigiatri = document.getElementById('Loaigiatri').value;
+    let Giatrimacdinh = document.getElementById('Giatrimacdinh').value;
+    let Giatrihientai = document.getElementById('Giatrihientai').value;
+    let Capnhapgiacuoi = document.getElementById('Capnhaplancuoi').value;
     if (check() )
     {
-        var tabLines = document.getElementById("form_table1");
+        var tabLines = document.getElementById("table");
         var tabLinesRow = tabLines.insertRow(tabLines.rows.length);
         var col1html = Stt;
-        var col2html = Id;
-        var col3html = HoTen;
-        var col4html = NgaySinh;
-        var col5html = QueQuan;
-        var col6html = SoCMND;
-        var col7html = Phone;
-        var col8html = "                <input class=\"submit\" type=\"button\" value = \"Delete\" onclick=\"deleteRow(this) ;\">\n" +
+        var col2html = Thuoctinh;
+        var col3html = ID;
+        var col4html = Loaithuoctinh;
+        var col5html = Loaigiatri;
+        var col6html = Giatrimacdinh;
+        var col7html = Giatrihientai;
+        var col8html = Capnhaplancuoi;
+        var col9html = "                <input class=\"submit\" type=\"button\" value = \"Xóa\" onclick=\"XoaRow(this) ;\">\n" +
             "                <input class=\"submit\" type=\"button\" value = \"Sửa\" onclick=\"document.getElementById('modal').style.display='block';\">" ;
 
         var col1 = tabLinesRow.insertCell(0); col1.innerHTML=col1html;
@@ -108,30 +110,35 @@ function them(){
         var col6 = tabLinesRow.insertCell(5); col6.innerHTML=col6html;
         var col7 = tabLinesRow.insertCell(6); col7.innerHTML=col7html;
         var col8 = tabLinesRow.insertCell(7); col8.innerHTML=col8html;
+        var col9 = tabLinesRow.insertCell(8); col9.innerHTML=col9html;
     }
 }
 function resetRow(){
-    document.getElementById('stt').value = "";
-    document.getElementById('id').value = "";
-    document.getElementById('hoTen').value = "";
-    document.getElementById('ngaySinh').value = "";
-    document.getElementById('queQuan').value = "";
-    document.getElementById('soCMND').value = "";
-    document.getElementById('phone').value = "";
+    document.getElementById('Stt').value = "";
+    document.getElementById('Thuoctinh').value = "";
+    document.getElementById('ID').value = "";
+    document.getElementById('Loaithuoctinh').value = "";
+    document.getElementById('Loaigiatri').value = "";
+    document.getElementById('Giatrimacdinh').value = "";
+    document.getElementById('Giatrijhientai').value = "";
+    document.getElementById('Capnhaplancuoi').value = "";
 }
 
 // Sửa
 function editRow(){
-    table.rows[rIndex].cells[0].innerHTML = document.getElementById("stt").value;
-    table.rows[rIndex].cells[1].innerHTML = document.getElementById("id").value;
-    table.rows[rIndex].cells[2].innerHTML = document.getElementById("hoTen").value;
-    table.rows[rIndex].cells[3].innerHTML = document.getElementById("ngaySinh").value;
-    table.rows[rIndex].cells[4].innerHTML = document.getElementById("queQuan").value;
-    table.rows[rIndex].cells[5].innerHTML = document.getElementById("soCMND").value;
-    table.rows[rIndex].cells[6].innerHTML = document.getElementById("phone").value;
+    table.rows[rIndex].cells[0].innerHTML = document.getElementById("Stt").value;
+    table.rows[rIndex].cells[1].innerHTML = document.getElementById("Thucotinh").value;
+    table.rows[rIndex].cells[2].innerHTML = document.getElementById("ID").value;
+    table.rows[rIndex].cells[3].innerHTML = document.getElementById("Loaithuoctinh").value;
+    table.rows[rIndex].cells[4].innerHTML = document.getElementById("Loaigiatri").value;
+    table.rows[rIndex].cells[5].innerHTML = document.getElementById("Giatrimacdinh").value;
+    table.rows[rIndex].cells[6].innerHTML = document.getElementById("Giatrihientai").value;
+    table.rows[rIndex].cells[7].innerHTML = document.getElementById("Capnhaplancuoi").value;
 }
-//   Xóa
-function deleteRow(row){
-    var i=row.parentNode.parentNode.rowIndex;
-    document.getElementById('form_table1').deleteRow(i);
+//  Xóa
+function XoaRow(row) {
+        var i=row.parentNode.parentNode.rowIndex;
+        document.getElementById('tablel').deleteRow(i);
+
+    table.rows[rIndex]
 }
