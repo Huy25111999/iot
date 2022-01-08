@@ -13,5 +13,6 @@ public class HomeController extends AbstractController {
     }
     public Result table() { return ok(views.html.home.table.apply()); }
     public Result table2() { return ok(views.html.home.table2.apply()); }
+    public Result form_table() { return ok(views.html.home.form_table.apply()); }
     }
 

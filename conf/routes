@@ -19,6 +19,7 @@ GET     /home                       controllers.HomeController.homePage()
 GET     /testCase                   controllers.HomeController.testCase()
 GET     /table                      controllers.HomeController.table()
 GET     /table2                     controllers.HomeController.table2()
+GET     /form_table                 controllers.HomeController.form_table()
 
 GET     /userList                   controllers.UserController.userList()
 POST    /userList                   controllers.UserController.userFilterList()
