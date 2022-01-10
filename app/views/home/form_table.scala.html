@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @views.html.title("VTAG ADMIN")
+
+    @views.html.tags.main_css()
     <style >
 
-        .content{
+        .container{
             display: flex;
             width: 800px;
             margin-top: 20px;
         }
-        *,table{
+        *{
             margin: 0 auto;
             padding: 0 auto;
             box-sizing: border-box;
@@ -25,8 +28,9 @@
             border: 1px solid #000000;
             border-collapse: collapse;
         }
-        .content_add{
-            text-align: center;
+        .tableAdd{
+            max-width: 100%;
+            margin-bottom: 20px;
         }
         /modal/
 
@@ -35,13 +39,16 @@
         }
 
         #modal{
-            margin-top: 50px;
+            position: fixed;
             width: 500px;
             background: #76808a;
             color: #000;
+            top: 0;
+            left: 0;
+            right: 0;
         }
         .form-content {
-            margin: 90px;
+            margin: 62px;
         }
 
         #modal .modal_close {
@@ -49,8 +56,8 @@
             color: #000000;
             font-size: 35px;
             text-align: right;
-            padding: 20px;
-            margin-right: -70px;
+            margin-right: -33px;
+            margin-top: -51px;
         }
 
         form.submit {
@@ -65,35 +72,226 @@
 
         .form-content .form-text{
             display: flex;
-            padding: 14px;
+            padding: 12px;
+            margin-right: 20px;
         }
         .form-content .form-text label{
             width: 100px;
         }
         .form-content .input .form_bottom{
             text-align: center;
-            padding-bottom: 20px ;
             display: flex;
             justify-content: space-evenly;
+            margin-top: 24px;
+            margin-bottom: -24px;
         }
 
     </style>
 </head>
 <body>
-<div class="content">
-    <div id="database"> </div>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="rose" data-background-color="black" data-image="/assets/images/loginbg.png">
+            <div class="logo">
+                <a href="" class="simple-text logo-mini">
+                    VA
+                </a>
+                <a href="" class="simple-text logo-normal">
+                    vTag Admin
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <div class="user">
+                    <div class="photo">
+                        <img src="/assets/images/logo.png" />
+                    </div>
+                    <div class="user-info">
+                        <a data-toggle="collapse" href="#collapseExample" class="username">
+                                <span>
+                                    admin2
+                                    <b class="caret"></b>
+                                </span>
+                        </a>
+                        <div class="collapse" id="collapseExample">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="sidebar-mini"> MP </span>
+                                        <span class="sidebar-normal"> My Profile </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="sidebar-mini"> EP </span>
+                                        <span class="sidebar-normal"> Edit Profile </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="sidebar-mini"> S </span>
+                                        <span class="sidebar-normal"> Settings </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item" id="menu-manageUser">
+                        <a class="nav-link" href="/userList">
+                            <i class="fa fa-user"></i>
+                            <p> Manage User </p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/logout">
+                            <i class="fa fa-sign-out"></i>
+                            <p> Logout </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-    <div class="content_add">
-        <form action="" class = "submit">
-            <input class="submit" type="button"  value = "Thêm" onclick="document.getElementById('modal').style.display='block';document.getElementById('Save').style.display='none' ;document.getElementById('Add').style.display='block' ;">
-        </form>
+        <div class="main-panel">
+
+            <div class="content">
+                <div class="container-fluid">
+
+                    <div class="advanced-search" id="advanced-search-bar">
+                        <div class="card">
+                            <div class="card-header card-header-rose card-header-icon">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4 class="card-title">
+                                            <a style="color: #428bca" id="aShowAdminFilter" href="javascript:void(0)" onclick="showAdminFilter()">Tìm kiếm: 3</a>
+                                            <a style="color: #428bca" id="aShowAdminFilter2" href="javascript:void(0)" onclick="showAdminFilter()">(+)</a>
+                                        </h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="toolbar" id="advanced-search-filterToolbar" style="float: right;display: none">
+                                            <!--        Here you can write extra buttons/actions for the toolbar              -->
+                                            <a id="ApplyFilter" class="btn btn-rose" onclick="ApplyFilter(1,15,true)">
+                                                <i class="fa fa-filter"></i> Tìm
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div id="search-filter-body" style="display: none">
+                                    <form action=/userList  method="POST" id="search-filter-form"  class="form-horizontal">
+
+                                        <div class="col-md-12 search-field-header">
+                                            <input name="page"  value="1"  style="display: none">
+                                            <input name="pageSize"  value="15"   style="display: none">
+                                            <input name="isResetPage"  value="false"   style="display: none">
+                                            <input name="sortFieldName"  value="role"   style="display: none">
+                                            <input name="isDesc"  value="true"   style="display: none">
+                                            <div class="col-md-0" >
+                                                <div style="display: none">
+                                                    <select id="ChooseFilter" name="filter[]"  multiple data-title="Choose Filters" class="selectpicker" data-style="btn-info btn-fill btn-block" data-menu-style="dropdown-blue">
+                                                        <option value="username">username</option>
+                                                        <option value="role">role</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="username" class="search-field">
+                                            <div class="row">
+                                                <label class="col-sm-2 col-form-label">Username</label>
+                                                <div class="col-sm-2 advancedSearchFrom" style="display: none">
+                                                    <select class="selectpicker conditionOptionValue" id="conditionOptionValue-username" name="conditionList[0].compQueryOp" data-style="btn btn-primary" >
+                                                        <option value==  >=</option>
+                                                        <option value=&lt;&gt;  >&lt;&gt;</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6" >
+                                                    <div class="form-group">
+                                                        <input name="conditionList[0].fieldName"  value="username" class="form-control" style="display: none">
+                                                        <input name="conditionList[0].fieldType"  value='String' class="form-control"  style="display:none">
+                                                        <input name="conditionList[0].fieldValue" class="conditionTextValue form-control"  placeholder="" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="role" class="search-field">
+                                            <div class="row">
+                                                <label class="col-sm-2 col-form-label">filter.role</label>
+                                                <div class="col-sm-2 advancedSearchFrom" style="display: none">
+                                                    <input name="conditionList[1].fieldName"  value="role" class="form-control"  style="display: none">
+                                                    <input name="conditionList[1].fieldType"  value='Int' class="form-control"  style="display: none">
+
+                                                    <select class="selectpicker conditionOptionValue" id="conditionOptionValue-role" name="conditionList[1].compQueryOp" data-style="btn btn-primary" >
+                                                        <option value==  >=</option>
+                                                        <option value=&lt;&gt;   >&lt;&gt;</option>
+                                                        <option value=&lt;=   >&lt;=</option>
+                                                        <option value=&gt;=   >&gt;=</option>
+                                                        <option value=between   >between</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-3" >
+                                                    <div class="form-group">
+                                                        <input name="conditionList[1].fieldValue" class="conditionIntValue form-control"  placeholder="123..."  value="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3" id="rightBetween-role" style="display: none">
+                                                    <div class="form-group">
+                                                        <input name="conditionList[2].fieldName"  value="role" class="form-control"  style="display: none">
+                                                        <input name="conditionList[2].compQueryOp"  value="<=" class="form-control"  style="display: none">
+                                                        <input name="conditionList[2].fieldType"  value="Int" class="form-control" style="display: none">
+                                                        <input name="conditionList[2].fieldValue" class="conditionIntValue form-control"  placeholder="123..." value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="search-field col-md-12" >
+                                            <div class="col-md-2 col-md-offset-9" >
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="clear:both;"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-primary card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">assignment</i>
+                                    </div>
+                                    <h4 class="card-title">Quản lý người dùng</h4>
+
+                                    <div class="toolbar" style="float: right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-toggle="modal" data-target="#editUser">
+                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>New User
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div id="database"> </div>
+
+                <div class="tableAdd">
+                    <form action="" class = "submit">
+                        <input class="submit" type="button"  value = "Thêm" onclick="document.getElementById('modal').style.display='block';document.getElementById('Save').style.display='none' ;document.getElementById('Add').style.display='block';">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
     </div>
-
-</div>
 
 <!--</div>-->
 <div id="modal" style="display: none">
-
     <div class="form-content">
         <div class="modal_close" onclick="document.getElementById('modal').style.display='none';">
             <span class="glyphicon glyphicon-remove"></span>
@@ -139,7 +337,7 @@
 
             <div class="form_bottom">
                 <input type="button" id = "Add"  value="Add" onclick="them();">
-                <input type="button"  id = "Save" value="Save" onclick="capNhat();">
+                <input type="button"  id = "Save" value="Save" onclick="capNhat(this);">
                 <input type="button" id = "Reset" value="Reset" onclick="resetRow(this);">
             </div>
 
