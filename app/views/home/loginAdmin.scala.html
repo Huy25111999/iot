@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Admin</title>
+    <style >
+        form {
+            width: 300px;
+            border: 1px solid green;
+            padding: 20px;
+            margin: 0 auto;
+            font-weight: 700;
+        }
+        form input{
+            width: 100%;
+            /*padding: 10px 0;*/
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .dangnhap{
+            width: 600px;
+            margin: 10px auto;
+        }
+
+        .login {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .login:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <form action='' method='POST' class="dangnhap" >
+        Tên đăng nhập : <input id="user" type='text' name='username'  />
+        Mật khẩu :      <input id="pass" type='password' name='password' />
+        <input type='button' class="login" value='Đăng nhập' onclick="checkLogin();" />
+        <a href='#' title='Đăng ký'>Đăng ký</a>
+    </form>
+    <script type="text/javascript">
+        function checkLogin(){
+            var user = document.getElementById('user').value;
+            var pass = document.getElementById('pass').value;
+            if (user=="" || pass == "" )
+            {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+                return false ;
+            }
+            if (user == "admin" && pass == "123456"){
+                window.location = "http://localhost:4444/form_table" ;
+            }
+            else{
+                alert("Username hoặc password không đúng!")
+            }
+        }
+    </script>
+</body>
+</html>
