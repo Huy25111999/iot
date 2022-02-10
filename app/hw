@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn sử dụng AJAX</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<style>
+ 
+*{
+    width: 1024px;;
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+.content-header{
+    width: 1190px;
+    height: 36px;
+    background: #EC1B2E;
+    opacity: 0.85;
+    border-radius: 0px 4px 0px 0px;
+    line-height: 36px;
+    color: #fff;
+    margin-bottom: 17px;
+}
+.content-header p {
+    size: 16px;
+    padding-left: 39px;
+}
+
+
+<!-- -->
+.card-body{
+    display: flex;
+}
+.action{
+    width: 200px;
+    display: flex;
+}
+.action button {
+    margin: 3px;
+}
+.action .glyphicon{
+    width: 80px;
+}
+.seach {
+    display: flex;
+    border: 2px solid #000;
+    height: 35px;
+    margin-top: 4px;
+}
+
+.seach input{
+    width: 150px;
+
+}
+.action .btn-action{
+    width: 84px;
+    height: 36px;
+}
+.action .glyphicon {
+    width: 50px;
+}
+.btn-seach {
+    line-height: 37px;
+    padding: 0 17px;
+}
+</style>
+<body>
+    <div class="wrapper ">
+        <div class="main-panel">
+            <div class="content">
+                <div class="container-fluid">
+                    <div style="clear:both;"></div>
+                    <div class="row">
+                        <div class ="content-header"><p>QUẢN LÝ NGƯỜI DÙNG</p></div>
+                  
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    
+                                    <div class="action action-left">
+
+                                        <button  class = "btn-action" type="button">Excel</button>
+                                        <button class = "btn-action" type="button">Pdf</button>
+                                        <button class = "btn-action" type="button">In</button>
+                                    </div>
+
+                                    <div class="action action-right">
+                                        <button class = "btn-action" type="button"><span class="glyphicon glyphicon-plus"></span></button>
+                                        <div class="seach">
+                                            <span class="glyphicon glyphicon-search btn-seach "></span>
+                                            <input type="input"></input>
+ 
+                                        </div>
+                                    </div>
+
+    <!--
+
+                                    <div id="database"></div>
+                                    <div class="table2">
+                                    
+                                        <div class="toolbar" style="float: right">
+                                            <button  type="button" rel="tooltip" class="btn btn-success" data-toggle="modal" data-target="#editUser" onclick="document.getElementById('modal').style.display='block' ;document.getElementById('Save').style.display='none' ;document.getElementById('Add').style.display='block';">
+                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>@Messages("New User")
+                                            </button>
+                                        </div>
+    
+                                    </div>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
