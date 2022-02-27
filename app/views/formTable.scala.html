@@ -1,0 +1,64 @@
+@import vn.m2m.common.models.User
+@(currentUser:User)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <title>VTAG ADMIN</title>
+    <link rel="icon" type="image/png" href="@routes.Assets.versioned("images/logo.png")">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    @views.html.tags.main_css()
+    <link href="@routes.Assets.versioned("stylesheets/table/formTable.css")" rel="stylesheet" >
+    <!--Boostrap icon-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="wrapper" id="wrapper">
+    @views.html.tags.DashboardMenu(currentUser)
+    <div class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <div style="clear:both;"></div>
+
+                <div class="row">
+                    <div class ="content-header"><p>QUẢN LÝ NGƯỜI DÙNG</p></div>
+                    <div class="col-md-12">
+                        <div class="card" id="card">
+                            <div class="card-body">
+                                <div class="action action-left">
+                                    <button id="btn-excel" class = "btn-action" type="button">Excel</button>
+                                    <button class = "btn-action action-pdf" type="button">Pdf</button>
+                                    <button class = "btn-action" type="button">In</button>
+                                </div>
+
+                                <div class="action action-right">
+                                    <button id ="addTable" class = "btn-action" type="button"><span class="glyphicon glyphicon-plus"></span></button>
+                                    <div class="seach">
+                                        <span class="glyphicon glyphicon-search btn-seach"></span>
+                                        <input type="input"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="database"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@views.html.home.tableAddEdit()
+@views.html.home.tableDelete()
+@views.html.tags.main_js()
+
+<!--Javascript-->
+<script src="@routes.Assets.versioned("javascripts/views/table/formTable.js")" type="text/javascript"></script>
+
+<!--Xuất file excel-->
+<script src="@routes.Assets.versioned("javascripts/views/table/jquery.table2excel.min.js")" type="text/javascript"></script>
+
+</body>
+</html>
+
