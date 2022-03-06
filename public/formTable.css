@@ -1,0 +1,304 @@
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    font-family: FS PF BeauSans Pro;
+}
+.card .card-body {
+    width: 100%;
+}
+/*Content-head*/
+.content-header{
+    width: 100%;
+    height: 36px;
+    background: #EC1B2E;
+    opacity: 0.85;
+    border-radius: 0px 4px 0px 0px;
+    line-height: 36px;
+    color: #fff;
+    margin: 0 15px 17px;
+}
+.content-header p {
+    height: 21px;
+    font-size: 16px;
+    padding-left: 56px;
+    font-weight: 600;
+    font-family: FS PF BeauSans Pro;
+    text-shadow: 0px 1.5px 2px rgba(0, 0, 0, 0.25);
+}
+
+<!-- -->
+.card-body{
+    display: flex;
+}
+.action{
+    display: flex;
+    font-size: 16px;
+    margin-left: 36px;
+}
+.action button {
+    margin: 3px;
+}
+
+button.btn-action.action-pdf {
+    color: #EC1B30;
+}
+.action.action-right {
+    margin-right: 42px;
+}
+.seach {
+    display: flex;
+    border: 1px solid #D6D6D7;
+    height: 38px;
+    margin-top: 2px;
+    border-radius: 4px;
+    width: 252px;
+
+}
+
+.action .btn-action{
+    width: 84px;
+    height: 36px;
+    border: #EAEBEB;
+    color: rgba(0, 0, 0, 1);
+    border-radius: 4px;;
+}
+.action .glyphicon {
+    width: 24px;
+}
+.btn-seach {
+    line-height: 30px;
+    color: #858687;
+}
+span.glyphicon.glyphicon-search.btn-seach {
+    line-height: 36px;
+}
+.seach input {
+    width: 196px;
+    margin: 2px;
+    border: #ffffff;
+}
+button#addTable {
+    border: 1px solid #D6D6D7;
+    background: #FFFFFF;
+    color: #858687;
+    width: 36px;
+    margin-right: 8px;
+}
+
+/*table*/
+table {
+    border: 0px solid #fff ;
+    width: 100%;
+}
+
+
+td,th{
+    border-bottom: 1px solid #dddddd;
+    border-collapse: collapse;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+    font-family: -webkit-body;
+}
+
+.dropdown .btn-action{
+    background: white;
+    border: #ffffff;
+    padding: 12px;
+    float: right;
+    margin-right: -20px;
+}
+
+.dropdown-menu>li>a{
+    font-size: 13px;
+}
+.dropdown-menu>li>a:hover {
+    color:#EC1B2E;
+}
+th {
+    width: 900px;
+    font-size: 16px;
+}
+
+/* modal*/
+
+#modal form input{
+    display: block;
+    width: 341px;
+    background: #EAEBEB;
+    font-size: 15px;
+    height: 36px;
+}
+.form_head {
+    height: 42px;
+    background: #EC1B2E;
+    margin-top: -19px;
+}
+.form_head h3 {
+    line-height: 42px;
+    color: rgba(255, 255, 255, 1);
+    font-family: -webkit-body;
+    margin-left: 67px;
+    font-size: 16px;
+}
+body #modal{
+    position: fixed;
+    width: 500px;
+    background: #fff;
+    color: #000;
+    top: 29px;
+    left: 0;
+    right: 0;
+    border-radius: 10px 10px 0px 0px;
+}
+.form-content {
+    margin: 20px 62px -10px;
+}
+
+.gly-drop {
+    margin-left: -50px;
+    color: #EC1B2E;
+    line-height: 27px;
+    padding-top: 10px;
+}
+.form-content .modal_close {
+    height: 20px;
+    color: #000000;
+    font-size: 25px;
+    text-align: right;
+    margin-right: -33px;
+    margin-top: -51px;
+}
+
+form.submit {
+    text-align: center;
+    margin-top: 18px;
+    color: #000;
+    font-size:16px;
+}
+
+.form-content .form-text{
+    padding: 7px;
+}
+.form-content .form-text label{
+    width: 128px;
+    color: #000;
+}
+.form-text >label >span {
+    color: #EC1B2E;
+}
+
+select.form-control {
+    font-size: 12px;
+    line-height: 15px;
+    margin-right: -18px;
+    padding-left: 20px;
+    background: #F4F5F6;
+}
+
+.delete-content.modal-bottom {
+    text-align: right;
+    margin: 32px -10px 11px;
+}
+
+select#nhom {
+    margin-right: 0px;
+}
+.form-text.dropdown {
+    margin-left: -37px;
+}
+#modal-bottom {
+   display: flex;
+   float: right;
+}
+/*modal-delete*/
+#modal-delete{
+    position: absolute;
+    width: 350px;
+    background: #FFFFFF;
+    top: 200px;
+    left: 0;
+    right: 0;
+}
+
+.delete-head{
+    height: 50px;
+    text-align: center;
+    padding: 15px;
+    background: red;
+    color: #fff;
+}
+.delete-content{
+    line-height:50px;
+    text-align: center;
+}
+
+.delete-content .btn-save{
+    background: red;
+    border-radius: 3px;
+    border: 0;
+}
+.delete-content .btn-close{
+    background: #B5B6B7;
+    border-radius: 3px;
+    border: 0;
+}
+.delete-content button {
+    width: 68px;
+    margin: 10px;
+}
+
+.delete-content button {
+    margin-top: -35px;
+}
+span.delete-edit{
+    margin-top: 4px;
+}
+/*Boostrap*/
+i.fa.fa-plus-circle {
+    padding: 12px;
+}
+
+i.material-icons {
+    color: #fff;
+    margin: -17.6px -5px;
+}
+
+a.btn.btn-danger {
+    margin-right: 18px;
+}
+
+span.gly-edit {
+    background-color: red;
+    height: 28px;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 18px;
+    margin: 5px;
+    font-size: 13px;
+}
+
+/*Phân trang*/
+div#datatables_length, div#datatables_filter{
+    display: none;
+}
+
+div#datatables_info {
+    font-size: 16px;
+    font-family: -webkit-body;
+}
+select#role,select#trucThuoc{
+    margin-right: 9px;
+    height: 34px;
+}
+table#datatables th, table#datatables td {
+    font-size: 16px;
+    padding-left: 0px;
+}
+
+/*Table excel*/
+#databaseNew{
+    display: none;
+}
