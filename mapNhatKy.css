@@ -6,8 +6,9 @@
     padding: 0;
 }
 
-#sidebar-wrapper{
+#map-content {
     display: flex;
+    position: relative;
 }
 .sidebar-content {
     height: 100%;
@@ -17,6 +18,9 @@
     width: 97%;
     max-width: 425px;
     display: none;
+    position: fixed;
+    z-index: 4;
+    background: #ffffff;
 }
 
 .move-in {
@@ -35,7 +39,7 @@
     z-index: 96;
     cursor: pointer;
     margin-left: -4px;
-    background: url(http://203.113.138.18:4444/assets/img/sidebar/moveicon-in.png) no-repeat;
+
 }
 
 .move-out {
@@ -53,7 +57,7 @@
     padding: 10px 10px 10px 0px;
     z-index: 96;
     cursor: pointer;
-    background: url(http://203.113.138.18:4444/assets/img/sidebar/moveicon-in.png) no-repeat;
+
 }
 
 .panel-heading {
@@ -181,4 +185,64 @@ select#imeiDevice>option {
 }
 option{
     font-size: inherit;
+}
+
+#map {
+    margin-top: 0;
+    height: calc(100vh - 0px);
+}
+.table-count {
+    display: flex;
+    background: #F1EDEB;
+    font-weight: 500;
+}
+.count {
+    width: 50%;
+    color: #212529;
+    padding: 0 5px;
+}
+.count.count-right {
+    text-align: right;
+}
+.col-md-5 {
+    padding: 0px 35px;
+}
+.zoom {
+    height: 81px;
+    position: fixed;
+    z-index: 4;
+    width: 40px;
+    right: 15px;
+    bottom: 112px;
+    background: rgb(255,2555,255);
+}
+.zoom-in,.zoom-out{
+    height: 40px;
+}
+.zoom-in{
+    border-bottom: 1px solid;
+}
+button>img {
+    width: 18px;
+    height: 18px;
+}
+button.zoom-content{
+    border: 0;
+    width: 40px;
+    background: rgb(255,255,255);
+}
+.zoom-center {
+    width: 30px;
+    height: 1px;
+    margin: 0 5px;
+    background: rgb(230, 230, 230);
+}
+.screen {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    right: 15px;
+    bottom: 50px;
+    background: rgb(255,255,255);
+    z-index: 4;
 }
