@@ -1,0 +1,93 @@
+#map {
+    margin-top: 0;
+    height: calc(100vh - 0px);
+}
+
+/*menu-toggle*/
+.move-in {
+    -moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 450px;
+    left: 0px;
+    width: 28px;
+    height: 55px;
+    display: block;
+    padding: 10px 10px 10px 0px;
+    z-index: 96;
+    cursor: pointer;
+    margin-left: -4px;
+
+}
+
+.move-out {
+    -moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 450px;
+    left: 800px;
+    width: 28px;
+    height: 55px;
+    display: block;
+    padding: 10px 10px 10px 0px;
+    z-index: 96;
+    cursor: pointer;
+}
+
+/*Sidebar content*/
+.sidebar-content {
+    height: 100%;
+    padding: 0;
+    overflow-y: hidden;
+    height: 100%;
+    width: 97%;
+    max-width: 800px;
+    display: none;
+    position: fixed;
+    z-index: 4;
+    background: #ffffff;
+}
+
+/*contentID*/
+.contentID{
+    display: flex;
+}
+.container {
+    top: 500px;
+    margin-top: 145px;
+}
+.content-head {
+    background: red;
+    color: #fff;
+    text-align: center;
+    height: 30px;
+}
+.content-head >h5 {
+    line-height: 30px;
+}
+.infoID {
+    width: 200px;
+    height: 500px;
+    margin: 8px;
+    background: #746f6f;
+}
+
+.infoID>h5 {
+    color: #fff;
+    text-align: center;
+}
+/*Count ID*/
+.countID {
+    display: flex;
+    color: #fff;
+    justify-content: space-around;
+}
+.listID {
+    height: 400px;
+}

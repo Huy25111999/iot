@@ -2,6 +2,9 @@
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: large;
 }
+#mapNhatKy>.nav-link {
+    background: #EC1B2E;
+}
 .main-panel>.content{
     padding: 0;
 }
@@ -9,6 +12,9 @@
 #map-content {
     display: flex;
     position: relative;
+}
+.sidebar {
+    z-index: 3;
 }
 .sidebar-content {
     height: 100%;
@@ -30,7 +36,7 @@
     -ms-transition: all 0.4s ease;
     transition: all 0.4s ease;
     position: absolute;
-    top: 45%;
+    top: 450px;
     left: 0px;
     width: 28px;
     height: 55px;
@@ -49,7 +55,7 @@
     -ms-transition: all 0.4s ease;
     transition: all 0.4s ease;
     position: absolute;
-    top: 45%;
+    top: 450px;
     left: 425px;
     width: 28px;
     height: 55px;
@@ -145,7 +151,7 @@ label.col-sm-3.col-form-label {
 #scroll-area-position {
     float: left;
     padding-right: 10px;
-    min-height: 380px;
+    min-height:  315px;;
 }
 .select2-selection__arrow {
     position: absolute;
@@ -179,18 +185,24 @@ input.datetimepicker{
     padding-left: 23px;
     padding-right: 12px;
 }
+select#imeiDevice {
+    font-size: large;
+    font-weight: 300;
+    color: #3C4858;
+}
+
 select#imeiDevice>option {
     color: #fff;
     background: #999999;
+    font-size: large;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
-option{
-    font-size: inherit;
-}
-
 #map {
     margin-top: 0;
     height: calc(100vh - 0px);
 }
+
+/*Table count*/
 .table-count {
     display: flex;
     background: #F1EDEB;
@@ -207,42 +219,58 @@ option{
 .col-md-5 {
     padding: 0px 35px;
 }
-.zoom {
-    height: 81px;
-    position: fixed;
-    z-index: 4;
-    width: 40px;
-    right: 15px;
-    bottom: 112px;
-    background: rgb(255,2555,255);
+/*dateTime*/
+div.date_timepicker_start{
+    position: relative;
 }
-.zoom-in,.zoom-out{
+
+input#date_timepicker_start, input#date_timepicker_end {
+    background: #fff;
+    border-bottom: 1px solid #d2d2d2;
+
+}
+
+input.active {
+    background-image: linear-gradient(to top, #9c27b0 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px) !important;
+}
+span.flatpickr-day {
+    font-size: 14px;
+}
+span.flatpickr-weekday,.flatpickr-current-month,input.numInput.cur-year,span.flatpickr-am-pm {
+    font-size: 14px;
+}
+
+/*Tabele*/
+div#table {
+    height: 425px;
+}
+
+/*Zoom*/
+
+button.mapboxgl-ctrl-zoom-in, button.mapboxgl-ctrl-zoom-out, button.mapboxgl-ctrl-fullscreen  {
+    width: 40px;
     height: 40px;
 }
-.zoom-in{
-    border-bottom: 1px solid;
+
+button.mapboxgl-ctrl-compass {
+    display: none;
 }
-button>img {
-    width: 18px;
-    height: 18px;
-}
-button.zoom-content{
-    border: 0;
-    width: 40px;
-    background: rgb(255,255,255);
-}
-.zoom-center {
+
+/*Modal*/
+button#btn-close {
     width: 30px;
-    height: 1px;
-    margin: 0 5px;
-    background: rgb(230, 230, 230);
+    height: 30px;
 }
-.screen {
+#modal {
+    width: 723px;;
+    height: 215px;
+    display: block;
     position: fixed;
-    width: 40px;
-    height: 40px;
-    right: 15px;
-    bottom: 50px;
-    background: rgb(255,255,255);
-    z-index: 4;
+    z-index: 1;
+    top: 100px;
+    left: 33%;
+    display: none;
+}
+.mapboxgl-popup-content {
+    width: 648px;
 }
