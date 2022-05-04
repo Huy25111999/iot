@@ -274,3 +274,31 @@ button#btn-close {
 .mapboxgl-popup-content {
     width: 648px;
 }
+
+
+/*Table*/
+.sidebar-body{
+    width:425px;
+    height: 500px;
+    overflow: scroll;
+}
+table#company {
+    margin-top: -1670px;
+}
+table#country {
+    margin-top: -1670px;
+}
+
+th, td {
+    color: #3C4858;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    text-align: center;
+}
+td {
+    padding: 10px 0px;
+}
+table.table-content{
+    width: 100%;
+    text-align: center;
+}
